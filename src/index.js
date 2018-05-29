@@ -10,6 +10,7 @@ import parseVariables from './parse-variables';
 import populateRequires from './hooks/populate-requires';
 import populateRewards from './hooks/populate-rewards';
 import processUserRules from './process-user-rules';
+import schemas from './schemas';
 
 export {
   checkRateLimit,
@@ -23,5 +24,6 @@ export {
   parseVariables,
   populateRequires,
   populateRewards,
-  processUserRules
+  processUserRules,
+  schemas
 };
