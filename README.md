@@ -1,5 +1,5 @@
-Playing Rules Common
-====================
+Playing Game Rules Common
+=========================
 
 Game rules utilities for playful applications.
 
