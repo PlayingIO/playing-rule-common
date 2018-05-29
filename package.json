@@ -18,7 +18,8 @@
   "dependencies": {
     "esm": "^3.0.14",
     "feathers-hooks": "^2.0.0",
-    "feathers-hooks-common": "^3.5.1"
+    "feathers-hooks-common": "^3.5.1",
+    "nerdamer": "^0.7.16"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
