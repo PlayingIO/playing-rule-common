@@ -12,7 +12,7 @@ import populateRewards from './hooks/populate-rewards';
 import processUserRules from './process-user-rules';
 import schemas from './schemas';
 
-export {
+export default {
   checkRateLimit,
   evalFormulaValue,
   getMetricRules,
