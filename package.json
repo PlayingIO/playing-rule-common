@@ -1,7 +1,7 @@
 {
   "name": "playing-rule-common",
   "version": "1.0.2",
-  "description": "Game rules common for playful applications",
+  "description": "Game rules common utilites for building playful applications",
   "author": "Forafish",
   "license": "MIT",
   "main": "index.js",

@@ -1,7 +1,7 @@
 Playing Game Rules Common
 =========================
 
-Game rules common for playful applications.
+Game rules common utilites for building playful applications.
 
 # Usage
 
