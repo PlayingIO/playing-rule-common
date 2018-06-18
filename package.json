@@ -1,6 +1,6 @@
 {
   "name": "playing-rule-common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Game rules common utilites for building playful applications",
   "author": "Forafish",
   "license": "MIT",
