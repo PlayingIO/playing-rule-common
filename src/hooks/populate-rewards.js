@@ -10,11 +10,10 @@ export default function populateRewards (target, getRewards) {
   return async function (context) {
     assert(context.type === 'after', `populateRewards must be used as a 'after' hook.`);
 
-    let params = { query: {}, ...context.params };
     let data = helpers.getHookDataAsArray(context);
 
     // target must be specified by $select to assoc
-    if (!helpers.isSelected(target, params.query.$select)) return context;
+    if (!helpers.isSelected(target, context.params)) return context;
 
     // gether all rewards
     const getRewardsFunc = getRewards || getRewardsField(target);

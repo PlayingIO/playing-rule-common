@@ -12,11 +12,10 @@ export default function populateRequires (target, getRequires) {
   return async function (context) {
     assert(context.type === 'after', `populateRequires must be used as a 'after' hook.`);
 
-    let params = { query: {}, ...context.params };
     let data = helpers.getHookDataAsArray(context);
 
     // target must be specified by $select to populate
-    if (!helpers.isSelected(target, params.query.$select)) return context;
+    if (!helpers.isSelected(target, context.params)) return context;
 
     // gether all requires in rules, as array of conditions array
     const getRequiresFunc = getRequires || getRequiresField(target);
