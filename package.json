@@ -16,7 +16,7 @@
     "test": "npm run lint && npm run coverage"
   },
   "dependencies": {
-    "esm": "^3.0.14",
+    "esm": "^3.0.63",
     "feathers-hooks": "^2.0.0",
     "feathers-hooks-common": "^3.5.1",
     "nerdamer": "^0.7.16"
