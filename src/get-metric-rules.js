@@ -1,6 +1,6 @@
-import fp from 'mostly-func';
+const fp = require('mostly-func');
 
-export default function getMetricRules (conditions) {
+module.exports = function getMetricRules (conditions) {
   return fp.flatten(fp.reduce((arr, cond) => {
     if (cond.rule === 'metric') arr = arr.concat(cond);
     if (cond.rule === 'and' || cond.rule === 'or') {
@@ -8,4 +8,4 @@ export default function getMetricRules (conditions) {
     }
     return arr;
   }, [], conditions));
-}
+};

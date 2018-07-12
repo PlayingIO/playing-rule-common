@@ -1,7 +1,7 @@
-import fp from 'mostly-func';
-import { fulfillRequire } from './fulfill-requires';
+const fp = require('mostly-func');
+const fulfillRequire = require('./fulfill-require');
 
-export default function fulfillAchievementRewards (achievement, variables, user) {
+module.exports = function fulfillAchievementRewards (achievement, variables, user) {
   return fp.reduce((arr, rule) => {
     if (rule.item && rule.item.name && rule.item.number) {
       if (fulfillRequire(user, variables, rule.requires)) {
@@ -18,4 +18,4 @@ export default function fulfillAchievementRewards (achievement, variables, user)
     }
     return arr;
   }, [], achievement.rules || []);
-}
+};

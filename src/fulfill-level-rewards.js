@@ -1,6 +1,6 @@
-import fp from 'mostly-func';
+const fp = require('mostly-func');
 
-export default function fulfillLevelRewards (level, user) {
+module.exports = function fulfillLevelRewards (level, user) {
   const currentState = fp.find(fp.propEq('metric', level.state.id), user.scores || []);
   const currentPoint = fp.find(fp.propEq('metric', level.point.id), user.scores || []);
   if (level.levels && currentPoint && currentPoint.value > 0) {
@@ -16,4 +16,4 @@ export default function fulfillLevelRewards (level, user) {
     }
   }
   return [];
-}
+};

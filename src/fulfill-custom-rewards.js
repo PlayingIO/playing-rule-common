@@ -1,10 +1,10 @@
-import fp from 'mostly-func';
-import { fulfillRequire } from './fulfill-requires';
+const fp = require('mostly-func');
+const fulfillRequire = require('./fulfill-require');
 
-export default function fulfillCustomRewards (rules, variables, user) {
+module.exports = function fulfillCustomRewards (rules, variables, user) {
   // filter by the rule requirements
   const activeRules = fp.filter(rule => {
     return fp.all(fulfillRequire(user, variables), rule.requires);
   }, rules);
   return fp.flatMap(fp.prop('rewards'), activeRules);
-}
+};

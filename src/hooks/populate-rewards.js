@@ -1,12 +1,12 @@
-import assert from 'assert';
-import fp from 'mostly-func';
-import { helpers } from 'mostly-feathers-mongoose';
+const assert = require('assert');
+const fp = require('mostly-func');
+const { helpers } = require('mostly-feathers-mongoose');
 
 const getRewardsField = (target) => fp.reduce((arr, item) => {
   return arr.concat(helpers.getField(item, target));
 }, []);
 
-export default function populateRewards (target, getRewards) {
+module.exports = function populateRewards (target, getRewards) {
   return async function (context) {
     assert(context.type === 'after', `populateRewards must be used as a 'after' hook.`);
 

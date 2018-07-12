@@ -1,7 +1,7 @@
-import fp from 'mostly-func';
-import nerdamer from 'nerdamer';
+const fp = require('mostly-func');
+const nerdamer = require('nerdamer');
 
-export default function evalFormulaValue (value, variables = {}) {
+module.exports = function evalFormulaValue (value, variables = {}) {
   const result = nerdamer(value, fp.clone(variables)).evaluate(); // clone as nerdamer will change vars
   return parseInt(result.text());
-}
+};

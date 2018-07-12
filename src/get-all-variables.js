@@ -1,7 +1,7 @@
-import fp from 'mostly-func';
-import parseVariables from './parse-variables';
+const fp = require('mostly-func');
+const parseVariables = require('./parse-variables');
 
-export default function getAllVariables (variables = {}, defaults){
+module.exports = function getAllVariables (variables = {}, defaults){
   const values = parseVariables(defaults);
   return fp.merge(variables, values);
-}
+};

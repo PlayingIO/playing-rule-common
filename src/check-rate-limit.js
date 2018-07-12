@@ -1,5 +1,5 @@
-import dateFn from 'date-fns';
-import fp from 'mostly-func';
+const dateFn = require('date-fns');
+const fp = require('mostly-func');
 
 const startOfInterval = (date, frequency, unit) => {
   switch (unit) {
@@ -57,7 +57,7 @@ const diffIntervalPercent = (startTime, endTime, unit) => {
   }
 };
 
-export default function checkRateLimit (rate, limit) {
+module.exports = function checkRateLimit (rate, limit) {
   const now = new Date();
   let { count, lastRequest, firstRequest, expiredAt } = limit || {};
   if (expiredAt && expiredAt.getTime() >= now.getTime()) {
@@ -101,5 +101,4 @@ export default function checkRateLimit (rate, limit) {
   count = count - (limit && limit.count || 0); // difference with original count
 
   return { count, lastRequest, firstRequest, expiredAt };
-}
-
+};

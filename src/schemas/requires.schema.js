@@ -1,4 +1,4 @@
-import fp from 'mostly-func';
+const fp = require('mostly-func');
 
 // metric based condition
 const metricCondition = {
@@ -72,4 +72,4 @@ const condition = fp.mergeAll([
 // requires structure
 const requires = [condition];
 
-export { condition, requires };
+module.exports = { condition, requires };

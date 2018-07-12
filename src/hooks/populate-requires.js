@@ -1,14 +1,14 @@
-import assert from 'assert';
-import fp from 'mostly-func';
-import { helpers } from 'mostly-feathers-mongoose';
-import getMetricRules from '../get-metric-rules';
+const assert = require('assert');
+const fp = require('mostly-func');
+const { helpers } = require('mostly-feathers-mongoose');
+const getMetricRules = require('../get-metric-rules');
 
 const getRequiresField = (target) => fp.reduce((arr, item) => {
   arr.push(helpers.getField(item, target) || []);
   return arr;
 }, []);
 
-export default function populateRequires (target, getRequires) {
+module.exports = function populateRequires (target, getRequires) {
   return async function (context) {
     assert(context.type === 'after', `populateRequires must be used as a 'after' hook.`);
 
@@ -25,4 +25,4 @@ export default function populateRequires (target, getRequires) {
 
     return context;
   };
-}
+};
